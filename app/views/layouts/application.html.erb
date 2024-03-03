@@ -14,12 +14,7 @@
     <div navbar class="navbar">
         <a href="/" class="navbar-brand">
             <h1 class="display-4" >The Chickpea Community</h1></a>
-        </div>
-        <div>
-        <p class ="navbar" class="lead" >Chickify your life, join the chicks!</p>
-        </div>
-   
-    <p>
+        <p class="navbar ml-auto">
       <% @user = User.find_by({"id" => session["user_id"]}) %>
       <% if @user == nil %>
         <a href="/users/new" class="btn btn-warning">Sign Up</a> | 
@@ -28,6 +23,10 @@
       <a> Welcome, <%= @user["username"] %>! |</a> <a href="/logout">Logout</a>
       <% end %>
     </p>
+        </div>
+        <div class ="navbar" >
+        <p class="lead" >Chickify your life, join the chicks!</p>    
+    </div>
 
     <p>
       <%= flash["notice"] %>
