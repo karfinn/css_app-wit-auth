@@ -20,12 +20,12 @@
         </div>
    
     <p>
-      <% @user = User.find_by({ "id" => session["user_id"] }) %>
+      <% @user = User.find_by({"id" => session["user_id"]}) %>
       <% if @user == nil %>
         <a href="/users/new" class="btn btn-warning">Sign Up</a> | 
         <a href="/login" class="btn btn-warning">Login</a>
       <% else %>
-        <%= @user["first_name"] %> | <a href="/logout">Logout</a>
+      <a> Welcome, <%= @user["username"] %>! |</a> <a href="/logout">Logout</a>
       <% end %>
     </p>
 
